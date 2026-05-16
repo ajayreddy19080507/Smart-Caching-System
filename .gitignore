@@ -1,0 +1,21 @@
+# Node modules
+frontend/node_modules/
+node_modules/
+
+# Python cache
+backend/__pycache__/
+__pycache__/
+
+# Environment variables and Secrets (CRITICAL)
+.env
+backend/.env
+frontend/.env
+backend/firebase-credentials.json
+firebase-credentials.json
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+backend/firebase-credentials.json
+backend/.env
