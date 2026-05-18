@@ -1,4 +1,4 @@
-# AuraCache: Smart Caching System
+# Smart Caching System
 
 # TEAM MEMBERS DETAILS (WORK DONE BY)
 1. Akhilesh .C
