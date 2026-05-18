@@ -24,7 +24,7 @@
 - Groq API (Llama-3 Models)
 - Firebase (Firestore Database)
 - AI Evaluator / Judge Logic
-- 
+
 
 # The project is designed to provide:
 
