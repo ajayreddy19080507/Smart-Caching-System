@@ -39,8 +39,14 @@ class QueryRequest(BaseModel):
 
 # --- NEW: Initialize RAG Components ---
 # We use a free, local embedding model from HuggingFace to convert text to vectors
-embeddings = HuggingFaceEmbeddings(model_name="all-MiniLM-L6-v2")
+embeddings = None
 vector_store = None  # This will store our uploaded document vectors in memory
+
+def get_embeddings():
+    global embeddings
+    if embeddings is None:
+        embeddings = HuggingFaceEmbeddings(model_name="all-MiniLM-L6-v2")
+    return embeddings
 
 @app.post("/upload")
 async def upload_document(file: UploadFile = File(...)):
@@ -61,7 +67,7 @@ async def upload_document(file: UploadFile = File(...)):
 
     # Add to FAISS vector store
     if vector_store is None:
-        vector_store = FAISS.from_documents(splits, embeddings)
+        vector_store = FAISS.from_documents(splits, get_embeddings())
     else:
         vector_store.add_documents(splits)
 
