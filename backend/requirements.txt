@@ -7,7 +7,6 @@ pydantic
 python-multipart
 langchain-community
 langchain-text-splitters
-langchain-huggingface
+fastembed
 faiss-cpu
 pypdf
-sentence-transformers
